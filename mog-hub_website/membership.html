@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Membership | Mog Hub</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+	
+		<div id="wrapper">
+	  
+		  <header>
+		  	<img src="_images/mog-hub_logo.png" alt="Logo for Mog Hub">
+			<nav id="topLinks">
+			  <ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="bookings.html">Bookings</a></li>
+				<li><a href="volunteer.html">Volunteer</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li class="currentPage">Membership</li>
+			  </ul>
+			</nav>
+		  </header>
+		  
+		  <main id="membership">
+			<h1>Membership</h1>
+			<article id="col1"></article>
+			<article id="col2">
+			  <h2>Become a member...</h2>
+			  <form action="sendresults.php" method="post" id="membershipForm">
+				<table>
+					<tr>
+						<td><label for="myName">Name</label></td>
+						<td><input type="text" name="myName" id="myName" value="Your name here" onfocus="this.value=''"></td>
+					</tr>
+					<tr>
+						<td><label for="myEmail">Email</label></td>
+						<td><input type="email" name="myEmail" id="myEmail" value="Your email here" onfocus="this.value=''"></td>
+					</tr>
+					<tr>
+						<td><label for="myProv">Province:</label></td>
+						<td style="text-align: left;"><select name="myProv" id="myProv">
+							<option value="0">Choose..</option>
+							<option value="1">Gauteng</option>
+							<option value="2">Kwazulu-Natal</option>
+							<option value="3">Western Cape</option>
+							<option value="4">Northern Cape</option>
+							<option value="5">Eastern Cape</option>
+							<option value="6">Free State</option>
+							<option value="7">Limpopo</option>
+							<option value="8">Mpumalanga</option>
+							<option value="9">North West</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td><label for="myGender">Gender:</label></td>
+						<td style="text-align: left;">
+							<input type="radio" name="myGender" value="Male">Male<br>
+							<input type="radio" name="myGender" value="Female">Female<br>
+							<input type="radio" name="myGender" value="NA">Rather not say
+						</td>
+					</tr>
+					<tr>
+						<td><label for="myInterests">Interests:</label></td>
+						<td style="text-align: left;">
+							<input type="checkbox" value="sport" name="myInterests">Sport<br>
+							<input type="checkbox" value="movies" name="myInterests">Movies<br>
+							<input type="checkbox" value="fitness" name="myInterests">Fitness<br>
+							<input type="checkbox" value="reading" name="myInterests">Reading<br>
+							<input type="checkbox" value="gaming" name="myInterests">Gaming<br>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="reset" value="Clear">
+							<input type="submit" value="Join" onclick="validateForm()">
+							<script>
+								function validateForm(){
+									var validateName = document.getElementById("myName").value;
+									if (validateName == "Your name here" ||
+										validateName == ""){
+											alert("Please enter your name");
+										}
+										var validateEmail = document.getElementById("myEmail").value;
+										if(validateEmail.includes("@") && validateEmail.includes(".")){}
+										else{alert("Not a valid email format")}
+										document.getElementById("col2").innerHTML="<h2>Thanks for joining</h2>";
+								}
+							</script>
+						</td>
+					</tr>
+				</table>
+			</form>
+			</article>
+			<article id="col3"></article>
+			<br class="clearFix">
+		  </main>
+		  
+		  <footer>
+			<nav id="bottomLinks">
+			  <ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="bookings.html">Bookings</a></li>
+				<li><a href="volunteer.html">Volunteer</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li class="currentPage">Membership</li>
+			  </ul>
+			</nav>
+			<p>
+				&copy; Mog Hub 2022 | Powered by "Sharp-Sharp" Web Hosting
+			</p>
+		  </footer>
+		  
+		</div>
+		
+	</body>
+	
+</html>
